@@ -1,0 +1,11 @@
+[book]
+authors = ["Philipp Oppermann <contact@phil-opp.com>", "Bart Massey <bart.massey@gmail.com"]
+language = "en"
+multilingual = false
+src = "blog"
+title = "Blog for Flamingos: A Rust OS Tutorial"
+description = "A \"blog book\" for Flamingos"
+
+[preprocessor.rss]
+files-glob = "*.md"
+url-base = "file://./blog/"
