@@ -5,7 +5,7 @@ description: Explains Flamingos history
 
 # Prehistory of Flamingos
 
-Back in the day (around 2017), Philipp Oppermann published
+Back in the day (around 2015), Philipp Oppermann published
 the first version of his blog entitled [Writing an OS in
 Rust]. As the name implies, this blog described how to write
 a very simple OS mostly from scratch in Rust. The resulting
