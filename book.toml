@@ -5,10 +5,10 @@ multilingual = false
 src = "blog"
 title = "Blog for Flamingos: A Rust OS Tutorial"
 description = "A \"blog book\" for Flamingos"
-link = "https://flamingos-blog.flamingosproject.github.io/"
+link = "https://flamingosproject.github.io/flamingos-blog"
 copyright = "Copyright © 2024 Philipp Oppermann and Bart Massey"
 ttl = 60  # Time-to-live in minutes
 
 [preprocessor.rss]
 files-glob = "*.md"
-url-base = "https://flamingos-blog.flamingosproject.github.io/"
+url-base = "https://flamingosproject.github.io/flamingos-blog"

@@ -4,7 +4,7 @@ name: Deploy mdBook to GitHub Pages
 on:
   push:
     branches:
-      - main # Or your default branch
+      - main
 
 jobs:
   deploy:
@@ -18,18 +18,22 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install mdBook
         run: |
           curl -LsSf https://github.com/rust-lang/mdBook/releases/download/v0.4.37/mdbook-v0.4.37-x86_64-unknown-linux-gnu.tar.gz | tar xzf -
           sudo mv mdbook /usr/local/bin
 
-      - name: Build mdBook
+      - name: Install mdbook-rss
+        # run: cargo install mdbook-rss
+        run: cargo install --git https://gitlab.com/bartmassey-upstream/mdbook-rss --branch fixes-2025 mdbook-rss
+
+      - name: Build mdBook with RSS
         run: mdbook build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./book
 
