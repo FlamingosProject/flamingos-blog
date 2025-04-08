@@ -1,32 +1,34 @@
-# Written largely by DeepSeek. We shall see…
-name: Deploy mdbook to GitHub Pages
+# Thanks to Google Gemini for this.
+name: Deploy mdBook to GitHub Pages
 
 on:
   push:
-    branches: [main]  # Change this to your source branch
+    branches:
+      - main # Or your default branch
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Setup mdbook and plugins
-      uses: peaceiris/actions-mdbook@v1
-      with:
-        mdbook-version: '0.4.34'  # Match your required version
-        plugins: mdbook-rss
+      - name: Install mdBook
+        run: |
+          curl -LsSf https://github.com/rust-lang/mdBook/releases/download/v0.4.37/mdbook-v0.4.37-x86_64-unknown-linux-gnu.tar.gz | tar xzf -
+          sudo mv mdbook /usr/local/bin
 
-    - name: Build mdbook with RSS
-      run: mdbook build
+      - name: Build mdBook
+        run: mdbook build
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        # personal_token: ${{ secrets.DEPLOY_TOKEN }}
-        # external_repository: FlamingosProject/flamingos-blog.github.io
-        publish_branch: main  # Or 'gh-pages' depending on your settings
-        publish_dir: ./book
-        keep_files: false
-        deploy_key: ${{ secrets.DEPLOY_KEY }}
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./book
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
