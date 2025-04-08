@@ -29,3 +29,4 @@ jobs:
         publish_branch: main  # Or 'gh-pages' depending on your settings
         publish_dir: ./book
         keep_files: false
+        deploy_key: ${{ secrets.DEPLOY_KEY }}
