@@ -1,8 +1,9 @@
 # Flamingos Blog
 Philipp Oppermann and Bart Massey 2025
 
-This is the blog for Flamingos, a tutorial Rust OS for small
-devices.
+This is the mdbook "source" of the blog for Flamingos, a
+tutorial Rust OS for small devices. The blog is at
+<https://github.com/flamingosproject.github.io/flamingos-blog>.
 
 ## Building
 
