@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Blog for Flamingos: A Rust OS Tutorial</title><link></link><description>A &quot;blog book&quot; for Flamingos</description><generator>mdbook-rss 0.1.1</generator><item><title>Introducing Flamingos</title><link>https://flamingosproject.github.io/introducing_flamingos.html</link><description><![CDATA[Explains this project]]></description><author>Philipp Oppermann &lt;contact@phil-opp.com&gt;, Bart Massey &lt;bart.massey@gmail.com</author><pubDate>Tue, 08 Apr 2025 08:58:35 -0700</pubDate><content:encoded><![CDATA[<h1 id='introducing_flamingos'>Introducing Flamingos</h1>
+
+<p>This blog book describes the Flamingos Project. Flamingos is a tutorial operating system written in Rust and intended for deployment on inexpensive and commonly-available hardware.</p>
+
+<p>You can find the Flamingos Project blog book at the [Flamingos website] or on the [Flamingos blog Github]. There is a [Flamingos RSS feed] for the project. You will likely also want to look at the [Flamingos Github] itself.</p>
+
+<p>The idea of the Flamingos Project is to provide a way to learn about OS kernel construction using Rust and inexpensive hardware. The Flamingos kernel runs on the US$15 Raspberry Pi Zero 2 W, a four-core 64-bit ARM processor with an MMU. It also runs on the Raspberry Pi 3B and the Raspberry Pi 4.</p>
+
+<h2 id='blog_book'>Blog Book</h2>
+
+<p>A &quot;blog book&quot; is what it says on the tin: an [mdbook] book that is intended to also be readable as an ongoing blog.</p>
+
+<p>This blog book follows the progress of an evolving piece of software, the Flamingos OS kernel. In the foreseeable future, Flamingos may also acquire a userspace: there&#8217;s a lot to do first.</p>
+
+<p>[Flamingos website]: https://flamingosproject.github.io/flamingos-blog [Flamingos blog Github]:  https://github.com/flamingosproject/flamingos-blog [Flamingos RSS feed]:  https://github.com/flamingosproject/flamingos-blog/rss.xml [Flamingos Github]:  https://github.com/flamingosproject/flamingos</p>
+]]></content:encoded></item><item><title>Prehistory of Flamingos</title><link>https://flamingosproject.github.io/prehistory_of_flamingos.html</link><description><![CDATA[Explains Flamingos history]]></description><author>Philipp Oppermann &lt;contact@phil-opp.com&gt;, Bart Massey &lt;bart.massey@gmail.com</author><pubDate>Tue, 08 Apr 2025 09:01:37 -0700</pubDate><content:encoded><![CDATA[<h1 id='prehistory_of_flamingos'>Prehistory of Flamingos</h1>
+
+<p>Back in the day (around 2017), Philipp Oppermann published the first version of his blog entitled [Writing an OS in Rust]. As the name implies, this blog described how to write a very simple OS mostly from scratch in Rust. The resulting &quot;Blog OS&quot; ran on a standard x86 laptop. This project was quite a popular read. Philipp produced [Writing an OS in Rust (2nd ed)] soon thereafter.</p>
+
+<p>In 2024 Bart Massey wanted to reproduce this success on newer hardware. Very cheap ARM processor boards were available that were nonetheless multicore, with decent MMUs. These boards were also better-documented and more accessible than x86 laptops.</p>
+
+<p>Bart was lazy and a bit ignorant, and thus asked Phil to &quot;help&quot;. Phil graciously agreed, and thus a new Blog OS was born.</p>
+
+<p>The new team looked at a lot of hardware options. A first attempt with the [milkV Duo], a ridiculously inexpensive (US$5-ish) board running Linux out-of-the-box, failed due to lack of documentation and concerns about future availability. The second try involved the [Raspberry Pi Zero</p>
+
+<ol type="2">
+<li>W] (PZ2W). This board was a little more expensive at around US$15, but much better documented and with a clear long-term availability story. As a 64-bit quad-core part with an MMU, the PZ2W would be a great target for a &quot;real OS&quot;. This seemed promising.</li>
+</ol>
+
+<p>As the team started to poke at this, they found an interesting thing. Hidden in plain sight was <em>another</em> Blog OS, published under the banner of the Rust Embedded Working Group. This was <code>rust-raspberrypi-OS-tutorials</code> by Andre Richter, with a kernel semi-secretly known as [mingo]. This series showed a lot of development of an OS for Raspberry Pi 3b and Raspberry Pi 4 with clear code and many exciting features. The code also turned out to work well with the PZ2W, which is very similar to the Pi 3b. Philipp and Bart decided not to do their own thing, but revamp Mingo and blog it, with Andre&#8217;s blessing.</p>
+
+<p>Andre had named the kernel Mingo as a short form of Flamingo. Philipp and Bart decided the OS as a whole would be Flamingos: not a &quot;flaming OS&quot;, just two or more birds.</p>
+
+<p>[Writing an OS in Rust]: https://os.phil-opp.com/edition-1/ [Writing an OS in Rust (2nd ed)]: https://os.phil-opp.com/ [milkV Duo]: https://milkv.io/duo [Raspberry Pi Zero 2 W]: https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/ [mingo]: https://github.com/rust-embedded/rust-raspberrypi-OS-tutorials/</p>
+]]></content:encoded></item></channel></rss>
